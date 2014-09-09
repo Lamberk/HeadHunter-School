@@ -20,12 +20,12 @@ public class CalcMediana
 
     }
 
-    public void FindMediana(int [] a)
+    public void findMediana(int [] a)
     {
         System.out.println((a[N-1]+a[N])/2);
     }
 
-    public static int [][] FillMass(int [] a, int [] b)
+    public static int [][] fillMass(int [] a, int [] b)
     {
         Random rand = new Random();
 
@@ -96,13 +96,13 @@ public class CalcMediana
         CalcMediana cm = new CalcMediana();
 
         int [][] sortMas = new int [2][N];
-        sortMas = FillMass(masOne, masTwo);
+        sortMas = fillMass(masOne, masTwo);
 
         sortMas[0] = mergeSort(sortMas[0]);
         sortMas[1] = mergeSort(sortMas[1]);
 
         for (int i=0; i<N; i++)
-        System.out.print(sortMas[0][i] + " ");
+            System.out.print(sortMas[0][i] + " ");
 
         System.out.print('\n');
 
@@ -121,7 +121,7 @@ public class CalcMediana
         System.out.print('\n');
         System.out.print('\n');
 
-        cm.FindMediana(result);
+        cm.findMediana(result);
 
 
 
