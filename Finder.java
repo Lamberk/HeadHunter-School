@@ -27,55 +27,40 @@ public class Finder
         if (mas1.compareTo(mas2)==0) return 1;
 
         String nextNumber;
-        String firstNumber;
 
-        int count = 1;
+
         int flag = 1;
-        int first = 1;
-        int test = length + 1;
-        nextNumber = String.valueOf(test);
-        firstNumber = String.valueOf(first);
+        int coreCount = length + 1;
+
+        int result = 1;
+        nextNumber = String.valueOf(coreCount);
         while(true)
         {
 
-            count++;
             if (flag == 0) break;
 
-            while(!nextNumber.isEmpty())
+            while ((!nextNumber.isEmpty()))
             {
                 mas2 = mas2.substring(1) + nextNumber.charAt(0);
                 nextNumber = nextNumber.substring(1);
 
-                if (firstNumber.isEmpty()== true && nextNumber.isEmpty()==false) count++;
-                if (firstNumber.isEmpty() == false)firstNumber = firstNumber.substring(1);
-
-
-                System.out.println(nextNumber);
-                System.out.println(mas1);
-                System.out.println(mas2);
-                System.out.println(count);
-                System.out.println('\n');
-
-
+                result++;
 
                 flag = mas1.compareTo(mas2);
-
+                if (flag==0) break;
             }
 
-            length++;
-            first++;
-            nextNumber = String.valueOf(length);
-            firstNumber = String.valueOf(first);
+            coreCount++;
+
+            nextNumber = String.valueOf(coreCount);
         }
 
-        return count;
-
+        return result;
     }
 
     public static void main(String args[]){
 
         Finder finder = new Finder();
         System.out.println(finder.toLook(a,finder.createMas(N),N));
-
     }
 }
